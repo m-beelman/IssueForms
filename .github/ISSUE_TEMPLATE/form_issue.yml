@@ -1,0 +1,110 @@
+name: Issue from assessment form
+description: Report issues with the assessment forms.
+title: "[Assessment issue]: "
+labels: ["AssessmentFormIssue", "Assessment", "Team .craft1.0"]
+body:
+  - type: markdown
+    attributes:
+      # yamllint disable rule:line-length
+      value: |
+        Thank you for helping to improve our assessment! But before you add a new issue we ask you to check the following things. 
+        Fields marked with '*' are required.
+  - type: checkboxes
+    # yamllint enable rule:line-length
+    id: terms
+    attributes:
+      label: Before it starts
+      description:
+        Nothing is perfect and that is not the case with our assessment tooling.
+        To make the work a little easier for you and us, a few things should be
+        clarified before you create an issue. These are things that are already
+        known or that are popular pitfalls.
+      options:
+        - label:
+            I confirm that I am connected to the Philips Global Network (PGN)
+            over Virtual Private Network (VPN).
+          required: true
+        - label:
+            I confirm that I have cleared my cache for the assessment page in
+            the browser. (Ctrl + F5)
+          required: true
+        - label: I confirm that I have checked my browser for enabled AdBlockers
+          required: true
+        - label: I confirm that I am using an up-to-date version of my browser
+          required: true
+  - type: dropdown
+    id: operating-system
+    attributes:
+      label: Operating System
+      description: On which operating system do you run the assessment?
+      options:
+        - Windows
+        - Linux
+        - MacOS
+  - type: dropdown
+    id: browser
+    attributes:
+      label: Browser
+      description: Which browser did you use for the assessment form?
+      options:
+        - Chrome
+        - Edge
+        - FireFox
+        - Safari
+        - Opera
+        - Internet Explorer
+    validations:
+      required: true
+  - type: input
+    id: navigation_path
+    attributes:
+      label: Business details
+      description:
+        Please enter the path to the project where the problem occurred. Please
+        use the '>' to separate the sections.
+      placeholder: Business > Business Category > Project
+    validations:
+      required: true
+  - type: checkboxes
+    id: what-happened-checkboxes
+    attributes:
+      label: What happened?
+      description:
+        In order to better categorize the problem for us, a few more details
+        about the issue would be very helpful.
+      options:
+        - label:
+            The page does not load or I get nothing displayed. (You can also
+            upload a screenshot in the comments field).
+          required: false
+        - label:
+            The page does not behave as desired. For example, scores are not
+            calculated or updated, or the checkboxes and radio buttons do not
+            behave as expected.
+          required: false
+        - label:
+            I can navigate to my project, but when I select an area like
+            Automation or Static Code Check, the content is not displayed as
+            expected.
+          required: false
+        - label: I am having trouble submitting my assessment form.
+          required: false
+        - label:
+            I have successfully submitted my form but when I reload it the
+            changes are no longer visible.
+          required: false
+        - label:
+            Other (Please describe in the comments field exactly what has
+            happened.)
+          required: false
+  - type: textarea
+    id: what-happened-text
+    attributes:
+      label: What happened in details?
+      description:
+        Describe a bit more in detail how the issue came about and use the
+        option to upload screenshots in the text field as well.
+      placeholder: Tell us what you see!
+      value: "Please provide more details about the problem."
+    validations:
+      required: true
