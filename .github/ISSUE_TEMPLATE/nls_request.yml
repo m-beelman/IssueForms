@@ -1,0 +1,106 @@
+name: NLS Text request
+description: If you want to request a new NLS text provide information and/or answers for the following items and questions.
+title: "### Title for your Request ###"
+labels: ["NLS text request"]
+body:
+  - type: markdown
+    attributes:
+      # yamllint disable rule:line-length
+      value: |
+        Thank you for helping to improve our assessment! But before you add a new issue we ask you to check the following things. 
+        Fields marked with '*' are required.
+
+  - type: textarea
+    id: context_purpose
+    attributes:
+      label: Describe context and purpose of the new text(s)
+      description: Describe context and purpose of the new text(s)
+    validations:
+      required: true
+
+  - type: checkboxes
+    # yamllint enable rule:line-length
+    id: terms
+    attributes:
+      label: What is the project scope?
+      description: In which projects or products must this text be available?
+      options:
+        - label: "IPM"
+          required: false
+        - label: "OB"
+          required: false
+        - label: "PIIC"
+          required: false
+        - label: "Tele"
+          required: false
+        - label: "XDS"
+          required: false
+        - label: "IGS"
+          required: false
+        - label: "IB Driver"
+          required: false
+        - label: "Support Tool"
+          required: false
+
+  - type: checkboxes
+    id: category
+    attributes:
+      label: To which category can the new text be assigned to?
+      description: To which category can the new text be assigned to?
+      options:
+        - label: "Alarm"
+          required: false
+        - label: "Notification"
+          required: false
+        - label: "Operation"
+          required: false
+        - label: "Settings Name"
+          required: false
+        - label: "Settings Value"
+          required: false
+        - label: "Smart Key"
+          required: false
+        - label: "Soft Key"
+          required: false
+        - label: "Status/Prompt"
+          required: false
+        - label: "Parameter Label"
+          required: false
+        - label: "Dimension Label	"
+          required: false
+
+  - type: textarea
+    id: similar_existing_tests
+    attributes:
+      label: Which similar or related texts already exist?
+      description: If you are not sure, use nls-grep or the NLS Explorer to check this up-front.
+      placeholder: "NLS_NOM_EVT_HI\nNLS_PROTWATCH_STATUS_SCORING_RESULT\nNLS_ADVISOR_SCO_1_SHOW_WINDOW\n..."
+    validations:
+      required: false 
+  - type: checkboxes
+    id: req_nom_terms
+    attributes:
+      label: Does the new text also require nomenclature terms? 
+      description: "This is the case for e.g. parameter and dimension label texts. If yes: Involve Norbert Meier for a corresponding nomenclature request/check."
+      options:
+        - label: "Yes"
+          required: false
+
+  - type: textarea
+    id: id_proposal
+    attributes:
+      label: Make a proposal for the new text(s) according to *this* example table.
+      description: Depending on the text type please make a proposal for all applicable text contexts.
+      value: "|Text Type|Example|D0|D1|D2|D3|D4|P|P1|P4|D0s|D3s|M\n
+              |---|---|---|---|---|---|---|---|---|---|---|---|---\n
+              Alarm | NLS_NOM_EVT_HI | ** pppppp High | **pppppp mmmm>uuuu | The pppppp value has exceeded the high alarm limit. |   |   | ** pppppp High | **pppppp mmmm>uuuu |||||\n"
+    validations:
+      required: false 
+
+  - type: checkboxes
+    id: more_related_later
+    attributes:
+      label: Will there be more related text requests later on?
+      options:
+        - label: "Yes"
+          required: false
