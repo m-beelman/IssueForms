@@ -3,13 +3,6 @@ description: If you want to request a new NLS text provide information and/or an
 title: "### Title for your Request ###"
 labels: ["NLS text request"]
 body:
-  - type: markdown
-    attributes:
-      # yamllint disable rule:line-length
-      value: |
-        Thank you for helping to improve our assessment! But before you add a new issue we ask you to check the following things. 
-        Fields marked with '*' are required.
-
   - type: textarea
     id: context_purpose
     attributes:
