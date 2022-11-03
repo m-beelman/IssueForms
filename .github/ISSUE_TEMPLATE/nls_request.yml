@@ -18,10 +18,6 @@ body:
       label: What is the project scope?
       description: In which projects or products must this text be available?
       options:
-        - label: "IPM"
-          required: false
-        - label: "OB"
-          required: false
         - label: "PIIC"
           required: false
         - label: "Tele"
