@@ -20,14 +20,14 @@ body:
         - Automation
         - Team Practices
         - Continuous Value Delivery (CVD)
-        - None
+        - n/a
     validations:
       required: true
   - type: dropdown
     id: submodule
     attributes:
       label: Select submodule
-      description: Select the the submodule. If not applicable select 'None'.
+      description: Select the the submodule. If not applicable select 'n/a'.
       options:
         - Static Code Check > General
         - Static Code Check > Coding Standards
@@ -47,7 +47,7 @@ body:
         - Team Practices > General
         - Team Practices > Debt Management
         - Team Practices > Code Review
-        - None
+        - n/a
     validations:
       required: true
   - type: textarea
