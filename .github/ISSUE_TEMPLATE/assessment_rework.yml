@@ -3,12 +3,6 @@ description: Collect ideas, problems oder additons for the assessment forms for 
 title: "[AssessmentRework]: "
 labels: ["AssessmentRework2023", "Assessment", "Team .craft1.0"]
 body:
-  - type: markdown
-    attributes:
-      # yamllint disable rule:line-length
-      value: |
-        Thank you for helping to improve our assessment! But before you add a new issue we ask you to check the following things. 
-        Fields marked with '*' are required.
   - type: dropdown
     id: module
     attributes:
