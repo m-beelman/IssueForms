@@ -1,6 +1,6 @@
 name: Improvement/rework for 2023 assessments
 description: Collect ideas, problems oder additons for the assessment forms for 2023
-title: "[AssessmentRework]: "
+title: "Title"
 labels: ["AssessmentRework2023", "Assessment", "Team .craft1.0"]
 body:
   - type: dropdown
