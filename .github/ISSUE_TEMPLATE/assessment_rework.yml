@@ -1,0 +1,58 @@
+name: Improvement/rework for 2023 assessments
+description: Collect ideas, problems oder additons for the assessment forms for 2023
+title: "[AssessmentRework]: "
+labels: ["AssessmentRework2023", "Assessment", "Team .craft1.0"]
+body:
+  - type: markdown
+    attributes:
+      # yamllint disable rule:line-length
+      value: |
+        Thank you for helping to improve our assessment! But before you add a new issue we ask you to check the following things. 
+        Fields marked with '*' are required.
+  - type: dropdown
+    id: module
+    attributes:
+      label: Select module
+      description: Which module you want to address with the issue?
+      options:
+        - Static Code Check
+        - Runtime Code Check
+        - Automation
+        - Team Practices
+        - Continuous Value Delivery (CVD)
+        - None
+    validations:
+      required: true
+  - type: dropdown
+    id: submodule
+    attributes:
+      label: Select submodule
+      description: Select the the submodule. If not applicable select 'None'.
+      options:
+        - Static Code Check > General
+        - Static Code Check > Coding Standards
+        - Static Code Check > Compiler Warnings
+        - Static Code Check > Static Analysis
+        - Static Code Check > Dead Code
+        - Static Code Check > Code Duplication
+        - Runtime Code Check > General
+        - Runtime Code Check > Dynamic Analysis
+        - Runtime Code Check > Test Pyramid
+        - Runtime Code Check > Unit Testing
+        - Runtime Code Check > Functional Testing
+        - Runtime Code Check > Smoke Testing
+        - Runtime Code Check > Dead Code
+        - Automation > General
+        - Automation > CI/CD
+        - Team Practices > General
+        - Team Practices > Debt Management
+        - Team Practices > Code Review
+        - None
+    validations:
+      required: true
+  - type: textarea
+    id: issue-text
+    attributes:
+      label: Write down your idea/suggestion/proposal...
+    validations:
+      required: true
