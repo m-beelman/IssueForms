@@ -15,7 +15,7 @@ body:
       label: Select module
       description: Which module you want to address with the issue?
       options:
-        - Static Code Check
+        - \#Static Code Check
         - Runtime Code Check
         - Automation
         - Team Practices
