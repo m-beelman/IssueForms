@@ -16,11 +16,11 @@ body:
       description: Which module you want to address with the issue?
       options:
         - -Static Code Check-
-        - Runtime Code Check
-        - Automation
-        - Team Practices
-        - Continuous Value Delivery (CVD)
-        - n/a
+        - -Runtime Code Check-
+        - -Automation-
+        - -Team Practices-
+        - -Continuous Value Delivery (CVD)-
+        - -n/a-
     validations:
       required: true
   - type: dropdown
