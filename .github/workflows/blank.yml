@@ -29,4 +29,4 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         run: |
-          gh issue list --search '-is:issue is:open "-Runtime Code Check- || General" in:Comment'
+          gh issue list --search '-is:issue is:open "-Runtime Code Check- || General" in:Comment' | wc -l
