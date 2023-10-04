@@ -1,6 +1,6 @@
 name: Create ADR Generation Request
 description: Issue that triggers the creation of a Architecture Decision Record
-title: "[ADR-Gen-Req]: "
+title: "[ADR-Gen-Req]: ADR Generation Request"
 labels: [ADR Generation Request]
 
 body:
@@ -13,13 +13,10 @@ body:
         
   - type: dropdown
     id: adr-status
-    validations:
-      required: true
     attributes:
       label: Status
       description: The current status of the ADR?
       options:
-        - none
         - proposed
         - rejected
         - accepted
@@ -28,7 +25,7 @@ body:
   - type: input
     id: adr-title
     attributes:
-      label: title-of-adr
+      label: ADR Title
       description:
         Title of solved problem and solution
       placeholder: short title of solved problem and solution
@@ -38,7 +35,7 @@ body:
   - type: input
     id: adr-deciders
     attributes:
-      label: adr-deciders
+      label: Deciders
       description:
         List of people who can make the decision about the ADR
       placeholder: short title of solved problem and solution
@@ -46,7 +43,7 @@ body:
   - type: input
     id: adr-consultants
     attributes:
-      label: adr-consultants
+      label: Consultants
       description:
         List of people who should be consulted about the ADR
       placeholder: short title of solved problem and solution
@@ -54,7 +51,7 @@ body:
   - type: input
     id: adr-informed
     attributes:
-      label: adr-informed
+      label: Informants
       description:
         List of people who should be informed about the ADR
       placeholder: short title of solved problem and solution

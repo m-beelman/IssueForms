@@ -4,12 +4,9 @@ name: CI
 
 # Controls when the workflow will run
 on:
-  # Triggers the workflow on push or pull request events but only for the "main" branch
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
-
+  # Triggers the workflow on new issues
+  issues:
+    types: [opened]
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
@@ -21,12 +18,19 @@ jobs:
     runs-on: ubuntu-latest
     env:
       GH_TOKEN: ${{ github.token }}
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v3
-
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
+      - name: Parse issue
+        id: parse
+        uses: onmax/issue-form-parser@v1.4
+        with:
+          issue_number: ${{ github.event.issue.number }}
+    
+      # Examples on how to use the output
+      - name: Show parsed payload data
         run: |
-          gh issue list --search '-is:issue is:open "-Runtime Code Check- || General" in:Comment' | wc -l
+          # Using the character `'` to prevent all characters enclosed within
+          # them from being treated as special characters (e.g. $ or `)
+          echo '${{ steps.parse.outputs.payload }}'
+    
+          # Print the value of the "Name" field
+          #echo '${{ fromJson(steps.parse.outputs.payload)["Name"] }}'
