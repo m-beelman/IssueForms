@@ -68,7 +68,7 @@ adr_template_filename = sys.argv[2]
 document_name = issue_data['Document Filename']
 
 # get the diretory of adr_filename path
-adr_dir = adr_filename.split('/')
+adr_dir = adr_template_filename.split('/')
 adr_dir = '/'.join(adr_dir[:-1])
 
 
@@ -76,7 +76,7 @@ issue_data['Id'] = sys.argv[1]
 issue_data['Date'] = datetime.datetime.now().strftime('%Y-%m-%d')
 
 
-header, content = split_file(adr_filename)
+header, content = split_file(adr_template_filename)
 header = replace_status(header, issue_data['Status'])
 header = replace_date(header, issue_data['Date'])
 header = replace_deciders(header, issue_data['Deciders'])
