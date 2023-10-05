@@ -51,7 +51,7 @@ jobs:
           add-paths: "docs/decisions/*.md"
           title: "Test PR"
           body: "This is a test PR"
-          branch: "test-pr"
-          branch-suffix: "test-pr"
+          branch: "ADR/new-adr"
+          branch-suffix: "short-commit-hash"
           delete-branch: true
           draft: true
