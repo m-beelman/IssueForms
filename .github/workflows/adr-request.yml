@@ -51,7 +51,8 @@ jobs:
           add-paths: "docs/decisions/*.md"
           title: "New generated Architecture Decision Record"
           branch: "ADR/new-adr"
-          branch-suffix: "short-commit-hash"
+          branch-suffix: "random"
           delete-branch: true
           draft: true
           assignees: "${{ github.event.issue.user.login }}"
+  
