@@ -30,4 +30,27 @@ jobs:
         run: |
           # Using the character `'` to prevent all characters enclosed within
           # them from being treated as special characters (e.g. $ or `)
-          echo '${{ steps.parse.outputs.payload }}'
+          echo '${{ steps.parse.outputs.payload }}' > ${{ github.event.issue.number }}.json
+          cat ${{ github.event.issue.number }}
+      - name: Setup python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.8'
+
+      - name: Create PR content
+        run: |
+          python3 ./create_pr.py ${{ github.event.issue.number }} docs/decisions/adr-template.md
+
+      - name: Create PR
+        uses: peter-evans/create-pull-request@v5
+        env:
+          GITHUB_TOKEN: ${{ github.token }}        
+        with:
+          commit-message: "Create PR"
+          add-paths: "docs/decisions/*.md"
+          title: "Test PR"
+          body: "This is a test PR"
+          branch: "test-pr"
+          branch-suffix: "test-pr"
+          delete-branch: true
+          draft: true
