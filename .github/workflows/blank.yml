@@ -55,3 +55,4 @@ jobs:
           branch-suffix: "short-commit-hash"
           delete-branch: true
           draft: true
+          assignees: "${{ github.event.issue.user.login }}"
