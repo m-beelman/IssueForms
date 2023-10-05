@@ -47,10 +47,9 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ github.token }}        
         with:
-          commit-message: "Create PR"
+          commit-message: "New generated Architecture Decision Record"
           add-paths: "docs/decisions/*.md"
-          title: "Test PR"
-          body: "This is a test PR"
+          title: "New generated Architecture Decision Record"
           branch: "ADR/new-adr"
           branch-suffix: "short-commit-hash"
           delete-branch: true
