@@ -43,17 +43,6 @@ def replace_date(header, new_date=None):
 def replace_status(header, new_status):
     return replace_field(header, 'status:', new_status)
 
-def replace_deciders(header, deciders):
-    return replace_field(header, 'deciders:', deciders)
-
-def replace_consulted(header, consulted):
-    return replace_field(header, 'consulted:', consulted)
-
-def replace_informed(header, informed):
-    return replace_field(header, 'informed:', informed)
-
-
-
 # replace every value of '_no_reponse_' with '' in issue_data
 def remove_no_response(issue_data):
     for key in issue_data:
@@ -79,9 +68,6 @@ issue_data['Date'] = datetime.datetime.now().strftime('%Y-%m-%d')
 header, content = split_file(adr_template_filename)
 header = replace_status(header, issue_data['Status'])
 header = replace_date(header, issue_data['Date'])
-header = replace_deciders(header, issue_data['Deciders'])
-header = replace_consulted(header, issue_data['Consultants'])
-header = replace_informed(header, issue_data['Informants'])
 content = replace_title(content, issue_data['ADR Title'])
 
 # write header and content back to file
