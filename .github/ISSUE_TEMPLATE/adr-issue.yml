@@ -23,6 +23,16 @@ body:
         - deprecated
 
   - type: input
+    id: doc-filename
+    attributes:
+      label: Document Filename
+      description:
+        The filename of the ADR document
+      placeholder: filename (without subdir and extension e.g. 'folder-structure')
+    validations:
+      required: true
+  
+  - type: input
     id: adr-title
     attributes:
       label: ADR Title
