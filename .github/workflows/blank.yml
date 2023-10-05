@@ -19,11 +19,11 @@ jobs:
     env:
       GH_TOKEN: ${{ github.token }}
     steps:
-      - name: Setup python
-        uses: actions/setup-python@v4
+      - name: checkout
+        uses: actions/checkout@v4
         with:
-          python-version: '3.8'
-
+          fetch-depth: 0
+          
       - name: Parse issue
         id: parse
         uses: onmax/issue-form-parser@v1.4
