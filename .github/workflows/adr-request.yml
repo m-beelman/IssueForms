@@ -40,7 +40,7 @@ jobs:
 
       - name: Create PR content
         run: |
-          python3 ./create_adr_pr.py ${{ github.event.issue.number }} docs/decisions/adr-template.md
+          python3 ./.github/scripts/create_adr_pr.py ${{ github.event.issue.number }} docs/decisions/adr-template.md
 
       - name: Create PR
         uses: peter-evans/create-pull-request@v5

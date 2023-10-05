@@ -43,7 +43,6 @@ def replace_date(header, new_date=None):
 def replace_status(header, new_status):
     return replace_field(header, 'status:', new_status)
 
-# replace every value of '_no_reponse_' with '' in issue_data
 def remove_no_response(issue_data):
     for key in issue_data:
         if issue_data[key] == '_No response_':
