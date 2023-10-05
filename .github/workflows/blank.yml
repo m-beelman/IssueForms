@@ -19,6 +19,11 @@ jobs:
     env:
       GH_TOKEN: ${{ github.token }}
     steps:
+      - name: Setup python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.8'
+
       - name: Parse issue
         id: parse
         uses: onmax/issue-form-parser@v1.4
@@ -32,10 +37,6 @@ jobs:
           # them from being treated as special characters (e.g. $ or `)
           echo '${{ steps.parse.outputs.payload }}' > ${{ github.event.issue.number }}.json
           cat '${{ github.event.issue.number }}.json'
-      - name: Setup python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.8'
 
       - name: Create PR content
         run: |
