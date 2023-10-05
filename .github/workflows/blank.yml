@@ -31,7 +31,7 @@ jobs:
           # Using the character `'` to prevent all characters enclosed within
           # them from being treated as special characters (e.g. $ or `)
           echo '${{ steps.parse.outputs.payload }}' > ${{ github.event.issue.number }}.json
-          cat ${{ github.event.issue.number }}
+          cat ${{ github.event.issue.number }}.json
       - name: Setup python
         uses: actions/setup-python@v4
         with:
