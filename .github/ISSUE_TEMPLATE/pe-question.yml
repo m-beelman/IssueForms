@@ -1,19 +1,14 @@
-name: Ask the platform enablers
-description: Issue form to ask questions to the platform enablers via the Synergy-Base repository
-title: "[Platform-Enablers-Q]: "
-labels: [Platform-Enablers-Q]
+name: Ask the Platform Enablers Team
+description: Issue form to ask questions to the Platform Enablers Team via the Synergy-Base repository
+title: "[Platform-Enablers-Question]: "
+labels: [Platform-Enablers-Question]
 
 body:
-  - type: markdown
-    attributes:
-      # yamllint disable rule:line-length
-      value: |
-        This template will create an issue to ask questions to the platform enablers via the Synergy-Base repository. Please fill in the form below and remove the unused fields.
   - type: textarea
     id: question
     attributes:
-      label: Ask your question here?
-      description: Describe in details what you want to know from the platform enablers. Please provide as much details as possible, because the information you provide will help the platform enablers to answer your question and help other users to find the answer to similar questions.
+      label: Ask your question here
+      description: Describe in details what you want to know from the Platform Enablers Team. Please provide as much details as possible, because the information you provide will help the platform enablers to answer your question and help other users to find the answer to similar questions.
       placeholder: "Please provide the details about your question here."
     validations:
       required: true
